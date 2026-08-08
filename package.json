@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
-    "start": "cd frontend && npx vite preview --host 0.0.0.0 --port $PORT"
+    "build": "cd frontend && npm install && npm run build && mkdir -p ../backend/src/main/resources/static && cp -r dist/* ../backend/src/main/resources/static/ && cd ../backend && mvn clean package -DskipTests",
+    "start": "java -Dserver.port=$PORT -jar backend/target/nexora-backend-1.0.0-SNAPSHOT.jar"
   }
 }
