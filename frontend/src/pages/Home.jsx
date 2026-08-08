@@ -138,7 +138,7 @@ export default function Home() {
   const [feedProducts, setFeedProducts] = useState([]);
   const [selectedCat, setSelectedCat] = useState('All');
   const [loading, setLoading] = useState(true);
-  const { user, openRegister } = useShop();
+  const { user, openRegister, t } = useShop();
   const navigate = useNavigate();
 
   // Auto-advance hero carousel
@@ -189,19 +189,19 @@ export default function Home() {
 
               {/* Headline */}
               <h1 style={{ fontSize: 'clamp(24px, 3.5vw, 48px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-1px', color: '#1A1A2E', marginBottom: 8 }}>
-                {slide.title}<br />
-                <span style={{ color: '#2874F0' }}>{slide.titleAccent}</span>
+                {heroIdx === 0 ? t('discover_title') : slide.title}<br />
+                <span style={{ color: '#2874F0' }}>{heroIdx === 0 ? '' : slide.titleAccent}</span>
               </h1>
 
-              <p style={{ fontSize: 15, color: '#424553', marginBottom: 24 }}>{slide.sub}</p>
+              <p style={{ fontSize: 15, color: '#424553', marginBottom: 24 }}>{heroIdx === 0 ? t('discover_sub') : slide.sub}</p>
 
               {/* CTA */}
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <button className="iq-btn-blue" onClick={() => navigate(slide.ctaLink)}>
-                  {slide.cta} <ArrowRight size={15} />
+                  {t('shop_now')} <ArrowRight size={15} />
                 </button>
                 <button className="iq-btn-outline" onClick={() => navigate('/search?q=best deals')}>
-                  Explore All →
+                  {t('explore_all')}
                 </button>
               </div>
 
@@ -282,8 +282,8 @@ export default function Home() {
       <section className="iq-section">
         <div className="iq-container">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-            <h2 className="iq-section-title">Shop by Category</h2>
-            <Link to="/products" className="iq-section-link">View all <ChevronRight size={14} /></Link>
+            <h2 className="iq-section-title">{t('shop_by_category')}</h2>
+            <Link to="/products" className="iq-section-link">{t('view_all')} <ChevronRight size={14} /></Link>
           </div>
           <div className="iq-scroll-row">
             {CATEGORIES.map(({ name, key, img }) => (
@@ -306,12 +306,16 @@ export default function Home() {
           <div className="iq-deal-grid">
             {DEAL_SECTIONS.map(({ title, category, link }) => {
               const items = getByCategory(category, 4);
+              const translatedTitle = category === 'Smartphones' ? t('top_deals_smartphones')
+                : category === 'Electronics' ? t('best_electronics')
+                : category === 'Fashion' ? t('fashion_top_picks')
+                : t('home_kitchen');
               return (
                 <div key={title} className="iq-deal-section">
                   <div className="iq-deal-header">
-                    <span style={{ fontSize: 14, fontWeight: 800, color: '#1A1A2E' }}>{title}</span>
+                    <span style={{ fontSize: 14, fontWeight: 800, color: '#1A1A2E' }}>{translatedTitle}</span>
                     <Link to={link} className="iq-section-link" style={{ fontSize: 12 }}>
-                      View all <ChevronRight size={12} />
+                      {t('view_all')} <ChevronRight size={12} />
                     </Link>
                   </div>
                   <div style={{ display: 'flex' }}>

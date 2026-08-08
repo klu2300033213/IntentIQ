@@ -68,7 +68,7 @@ export default function Navbar() {
   const searchRef = useRef(null);
   const catRef = useRef(null);
   const langRef = useRef(null);
-  const { wishlist, user, cartCount, openLogin, openRegister, logout } = useShop();
+  const { wishlist, user, cartCount, openLogin, openRegister, logout, currentLang, setLanguage, t } = useShop();
 
   const promos = [
     '🇮🇳 Great Freedom Sale is Live!',
@@ -178,7 +178,7 @@ export default function Navbar() {
                   fontSize: 13, fontWeight: 500, color: '#424553',
                   whiteSpace: 'nowrap', cursor: 'pointer',
                 }}>
-                <Menu size={14} /> All Categories <ChevronDown size={12} style={{ transform: catDropOpen ? 'rotate(180deg)' : 'none', transition: '0.2s' }} />
+                <Menu size={14} /> {t('all_categories')} <ChevronDown size={12} style={{ transform: catDropOpen ? 'rotate(180deg)' : 'none', transition: '0.2s' }} />
               </button>
 
               {catDropOpen && (
@@ -213,7 +213,7 @@ export default function Navbar() {
                 <input
                   type="text" value={query} onChange={e => onQueryChange(e.target.value)}
                   onFocus={() => !query && setShowSugg(true)}
-                  placeholder="Search for products, brands and more..."
+                  placeholder={t('search_placeholder')}
                   className="iq-search-input flex-1 min-w-0" />
                 <button type="submit" className="iq-search-btn"><Search size={18} /></button>
               </form>
@@ -237,7 +237,7 @@ export default function Navbar() {
               <button
                 onClick={() => setLangDropOpen(v => !v)}
                 style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 13, color: '#424553', background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}>
-                🇮🇳 {selectedLang.code} <ChevronDown size={11} style={{ transform: langDropOpen ? 'rotate(180deg)' : 'none', transition: '0.2s' }} />
+                🇮🇳 {currentLang} <ChevronDown size={11} style={{ transform: langDropOpen ? 'rotate(180deg)' : 'none', transition: '0.2s' }} />
               </button>
               {langDropOpen && (
                 <div style={{
@@ -249,18 +249,18 @@ export default function Navbar() {
                   <div style={{ padding: '4px 0' }}>
                     {LANGUAGES.map(lang => (
                       <button key={lang.code}
-                        onClick={() => { setSelectedLang(lang); setLangDropOpen(false); }}
+                        onClick={() => { setLanguage(lang.code); setLangDropOpen(false); }}
                         style={{
                           display: 'flex', alignItems: 'center', gap: 10, width: '100%',
-                          padding: '9px 14px', fontSize: 13, color: lang.code === selectedLang.code ? '#2874F0' : '#1A1A2E',
-                          background: lang.code === selectedLang.code ? '#EEF4FF' : 'none',
-                          border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: lang.code === selectedLang.code ? 700 : 400,
+                          padding: '9px 14px', fontSize: 13, color: lang.code === currentLang ? '#2874F0' : '#1A1A2E',
+                          background: lang.code === currentLang ? '#EEF4FF' : 'none',
+                          border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: lang.code === currentLang ? 700 : 400,
                         }}
-                        onMouseEnter={e => { if (lang.code !== selectedLang.code) e.currentTarget.style.background = '#F8F9FA'; }}
-                        onMouseLeave={e => { if (lang.code !== selectedLang.code) e.currentTarget.style.background = 'none'; }}>
+                        onMouseEnter={e => { if (lang.code !== currentLang) e.currentTarget.style.background = '#F8F9FA'; }}
+                        onMouseLeave={e => { if (lang.code !== currentLang) e.currentTarget.style.background = 'none'; }}>
                         <span>{lang.flag}</span>
                         <span>{lang.label}</span>
-                        {lang.code === selectedLang.code && <span style={{ marginLeft: 'auto', fontSize: 10 }}>✓</span>}
+                        {lang.code === currentLang && <span style={{ marginLeft: 'auto', fontSize: 10 }}>✓</span>}
                       </button>
                     ))}
                   </div>
@@ -272,9 +272,9 @@ export default function Navbar() {
             <div style={{ position: 'relative' }} ref={userMenuRef}>
               <button onClick={() => user ? setUserMenuOpen(v => !v) : openLogin()}
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4px 8px', background: 'none', border: 'none', cursor: 'pointer', minWidth: 64 }}>
-                <span style={{ fontSize: 11, color: '#878787' }}>Hello, {user ? user.name?.split(' ')[0] : 'Sign In'}</span>
+                <span style={{ fontSize: 11, color: '#878787' }}>{t('hello')}, {user ? user.name?.split(' ')[0] : t('login')}</span>
                 <span style={{ fontSize: 13, fontWeight: 700, color: '#1A1A2E', display: 'flex', alignItems: 'center', gap: 3 }}>
-                  Account <ChevronDown size={11} />
+                  {t('account')} <ChevronDown size={11} />
                 </span>
               </button>
 
@@ -289,9 +289,9 @@ export default function Navbar() {
                     <div style={{ fontSize: 12, color: '#878787', marginTop: 2 }}>{user.email}</div>
                   </div>
                   {[
-                    { icon: User,    label: 'My Profile',  to: '/profile' },
-                    { icon: Package, label: 'My Orders',   to: '/orders'  },
-                    { icon: Heart,   label: 'Wishlist',    to: '/wishlist' },
+                    { icon: User,    label: t('my_profile'),  to: '/profile' },
+                    { icon: Package, label: t('orders'),      to: '/orders'  },
+                    { icon: Heart,   label: t('wishlist'),    to: '/wishlist' },
                   ].map(({ icon: Icon, label, to }) => (
                     <Link key={to} to={to} onClick={() => setUserMenuOpen(false)}
                       style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '11px 16px', fontSize: 13, color: '#424553', textDecoration: 'none' }}
@@ -303,7 +303,7 @@ export default function Navbar() {
                   <div style={{ borderTop: '1px solid #F0F0F0' }}>
                     <button onClick={() => { logout(); setUserMenuOpen(false); }}
                       style={{ display: 'flex', alignItems: 'center', gap: 10, width: '100%', padding: '11px 16px', fontSize: 13, color: '#E53935', background: 'none', border: 'none', cursor: 'pointer' }}>
-                      <LogOut size={15} /> Sign Out
+                      <LogOut size={15} /> {t('logout')}
                     </button>
                   </div>
                 </div>
@@ -314,7 +314,7 @@ export default function Navbar() {
             <Link to="/orders" className="hidden md:flex"
               style={{ flexDirection: 'column', alignItems: 'center', padding: '4px 8px', textDecoration: 'none', minWidth: 72 }}>
               <span style={{ fontSize: 11, color: '#878787' }}>Returns</span>
-              <span style={{ fontSize: 13, fontWeight: 700, color: '#1A1A2E' }}>& Orders</span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: '#1A1A2E' }}>{t('orders')}</span>
             </Link>
 
             {/* Cart */}

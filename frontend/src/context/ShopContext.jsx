@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { apiService } from '../services/apiService';
+import { getTranslation } from '../utils/translations';
 
 const ShopContext = createContext();
 
@@ -23,6 +24,14 @@ export function ShopProvider({ children }) {
   const [orders, setOrders] = useState(loadOrders);
   const [user, setUser] = useState(loadUser);
   const [authModal, setAuthModal] = useState(null);
+  const [currentLang, setCurrentLang] = useState(() => localStorage.getItem('nexora-lang') || 'EN');
+
+  const setLanguage = useCallback((code) => {
+    setCurrentLang(code);
+    localStorage.setItem('nexora-lang', code);
+  }, []);
+
+  const t = useCallback((key) => getTranslation(currentLang, key), [currentLang]);
 
   useEffect(() => {
     let sid = localStorage.getItem('nexora-session-id');
@@ -147,7 +156,7 @@ export function ShopProvider({ children }) {
   return (
     <ShopContext.Provider value={{
       cart, wishlist, recentlyViewed, orders,
-      user, authModal,
+      user, authModal, currentLang, setLanguage, t,
       login, logout, openLogin, openRegister, closeAuth,
       addToCart, removeFromCart, updateQuantity, clearCart,
       toggleWishlist, isInWishlist,

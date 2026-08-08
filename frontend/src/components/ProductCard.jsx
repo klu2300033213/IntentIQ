@@ -4,7 +4,7 @@ import { useShop } from '../context/ShopContext';
 import { getProductImage, getCategoryFallbackImage } from '../data/products';
 
 export default function ProductCard({ product, compact = false }) {
-  const { addToCart, toggleWishlist, isInWishlist } = useShop();
+  const { addToCart, toggleWishlist, isInWishlist, t } = useShop();
   const isWish = isInWishlist(product.id);
   const img = product.image || getProductImage(product);
   const discount = product.discount || 0;
@@ -79,11 +79,11 @@ export default function ProductCard({ product, compact = false }) {
             <span className="iq-price-old">₹{product.oldPrice.toLocaleString()}</span>
           )}
           {discount > 5 && (
-            <span className="iq-price-discount">{discount}% off</span>
+            <span className="iq-price-discount">{discount}% {t('off')}</span>
           )}
         </div>
 
-        <p className="iq-free-delivery">Free delivery</p>
+        <p className="iq-free-delivery">{t('free_delivery')}</p>
       </div>
 
       {/* ── Add to Cart ── */}
@@ -93,7 +93,7 @@ export default function ProductCard({ product, compact = false }) {
         aria-label={`Add ${product.name} to cart`}
       >
         <ShoppingCart size={14} />
-        Add to Cart
+        {t('add_to_cart')}
       </button>
     </article>
   );
