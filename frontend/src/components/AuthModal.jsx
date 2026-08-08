@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { apiService } from '../services/apiService';
 import { X, Eye, EyeOff, ShieldCheck, Zap, Sparkles, Mail, Lock, User } from 'lucide-react';
 
 function InputField({ label, type = 'text', value, onChange, placeholder, icon: Icon }) {
@@ -65,14 +66,15 @@ export default function AuthModal() {
     setError('');
     setLoading(true);
     try {
-      await new Promise((r) => setTimeout(r, 800));
       if (isLogin) {
         if (!form.email || !form.password) throw new Error('Please fill all fields');
-        login({ name: form.email.split('@')[0] || 'User', email: form.email });
+        const userObj = await apiService.loginUser({ email: form.email, password: form.password });
+        login(userObj);
       } else {
         if (!form.name || !form.email || !form.password) throw new Error('Please fill all fields');
         if (form.password.length < 6) throw new Error('Password must be at least 6 characters');
-        login({ name: form.name, email: form.email });
+        const userObj = await apiService.registerUser({ name: form.name, email: form.email, password: form.password });
+        login(userObj);
       }
     } catch (err) {
       setError(err.message);

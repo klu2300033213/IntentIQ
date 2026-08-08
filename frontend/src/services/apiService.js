@@ -118,4 +118,40 @@ export const apiService = {
       suggestedProducts: localProducts.slice(0, 3),
     };
   },
+
+  async registerUser({ name, email, password }) {
+    const API_HOST = window.location.hostname === 'localhost' ? 'http://localhost:8088' : '';
+    try {
+      const res = await fetch(`${API_HOST}/api/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        return data.user || { name, email };
+      }
+    } catch (e) {
+      console.warn('Backend API signup error', e);
+    }
+    return { name, email };
+  },
+
+  async loginUser({ email, password }) {
+    const API_HOST = window.location.hostname === 'localhost' ? 'http://localhost:8088' : '';
+    try {
+      const res = await fetch(`${API_HOST}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        return data.user || { name: email.split('@')[0], email };
+      }
+    } catch (e) {
+      console.warn('Backend API login error', e);
+    }
+    return { name: email.split('@')[0], email };
+  },
 };
