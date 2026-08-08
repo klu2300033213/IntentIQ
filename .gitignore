@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+.pnpm-store
+.yarn
+
+# Build outputs
+dist
+build
+target
+*.jar
+
+# Environment and IDE
+.env
+.env.local
+.DS_Store
+.idea
+.vscode
+*.log
+
+# Temp files
+tmp
+temp
