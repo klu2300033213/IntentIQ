@@ -7,6 +7,7 @@ import {
   Dumbbell, Watch, BookOpen, Gift, Zap, Tag
 } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
+import { getCategoryLabel } from '../utils/translations';
 
 const CATEGORY_LINKS = [
   { label: 'Home',           to: '/' },
@@ -128,20 +129,20 @@ export default function Navbar() {
         }}>
           <div className="iq-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontSize: 12 }}>
-              <span style={{ color: '#C62828', fontWeight: 700 }}>{promos[0]}</span>
-              <span className="hidden sm:inline" style={{ color: '#424553' }}>{promos[1]}</span>
-              <span className="hidden md:inline" style={{ color: '#424553' }}>{promos[2]}</span>
+              <span style={{ color: '#C62828', fontWeight: 700 }}>{t('promo_freedom')}</span>
+              <span className="hidden sm:inline" style={{ color: '#424553' }}>{t('promo_top_brands')}</span>
+              <span className="hidden md:inline" style={{ color: '#424553' }}>{t('promo_discount')}</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
               <button onClick={() => navigate('/products')}
                 style={{ fontSize: 12, fontWeight: 700, color: '#FFFFFF', background: '#2874F0', padding: '3px 14px', borderRadius: 3, border: 'none', cursor: 'pointer' }}>
-                Shop Now →
+                {t('shop_now')}
               </button>
               <span className="hidden sm:flex items-center gap-1" style={{ fontSize: 12, color: '#424553', cursor: 'pointer' }}>
-                <Smartphone size={12} /> Download App
+                <Smartphone size={12} /> {t('download_app')}
               </span>
               <span className="hidden md:flex items-center gap-1" style={{ fontSize: 12, color: '#424553', cursor: 'pointer' }}>
-                <Store size={12} /> Become a Seller
+                <Store size={12} /> {t('become_seller')}
               </span>
               <button onClick={() => setPromoVisible(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#878787' }}>
                 <X size={13} />
@@ -198,7 +199,7 @@ export default function Navbar() {
                         <div style={{ width: 32, height: 32, borderRadius: 8, background: color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                           <Icon size={15} color={color} />
                         </div>
-                        {label}
+                        {getCategoryLabel(currentLang, label)}
                         <ChevronRight size={12} color="#C0C0C0" style={{ marginLeft: 'auto' }} />
                       </Link>
                     ))}
@@ -327,7 +328,7 @@ export default function Navbar() {
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: 14, fontWeight: 700, color: '#1A1A2E' }} className="hidden sm:inline">Cart</span>
+              <span style={{ fontSize: 14, fontWeight: 700, color: '#1A1A2E' }} className="hidden sm:inline">{t('cart')}</span>
             </Link>
 
             {/* Wishlist */}
@@ -355,10 +356,12 @@ export default function Navbar() {
           <div className="iq-container">
             <div style={{ display: 'flex', alignItems: 'center', overflowX: 'auto', scrollbarWidth: 'none' }}>
               {CATEGORY_LINKS.map(({ label, to }) => (
-                <Link key={label} to={to} className={`iq-nav-pill ${isActive(to) ? 'active' : ''}`}>{label}</Link>
+                <Link key={label} to={to} className={`iq-nav-pill ${isActive(to) ? 'active' : ''}`}>
+                  {getCategoryLabel(currentLang, label)}
+                </Link>
               ))}
               <Link to="/profile" className="iq-nav-pill shrink-0" style={{ color: '#2874F0', marginLeft: 'auto' }}>
-                Become a Seller
+                {t('become_seller')}
               </Link>
             </div>
           </div>

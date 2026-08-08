@@ -9,6 +9,7 @@ import ProductCard from '../components/ProductCard';
 import { apiService } from '../services/apiService';
 import { products as allProducts, getProductImage } from '../data/products';
 import { useShop } from '../context/ShopContext';
+import { getCategoryLabel } from '../utils/translations';
 
 /* ══ CATEGORY DATA ══════════════════════════════════════════ */
 const CATEGORIES = [
@@ -138,7 +139,7 @@ export default function Home() {
   const [feedProducts, setFeedProducts] = useState([]);
   const [selectedCat, setSelectedCat] = useState('All');
   const [loading, setLoading] = useState(true);
-  const { user, openRegister, t } = useShop();
+  const { user, openRegister, t, currentLang } = useShop();
   const navigate = useNavigate();
 
   // Auto-advance hero carousel
@@ -261,14 +262,19 @@ export default function Home() {
       <section className="iq-service-bar">
         <div className="iq-container">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, padding: '12px 0', flexWrap: 'wrap' }}>
-            {SERVICES.map(({ icon: Icon, title, sub }) => (
-              <div key={title} style={{ display: 'flex', alignItems: 'center', gap: 10, flex: '1 1 150px', minWidth: 140 }}>
+            {[
+              { icon: RotateCcw, textKey: 'days_returns' },
+              { icon: Truck,     textKey: 'free_delivery' },
+              { icon: Shield,    textKey: 'authentic' },
+              { icon: CreditCard,textKey: 'secure_payments' },
+              { icon: Headphones,textKey: 'support_247' },
+            ].map(({ icon: Icon, textKey }) => (
+              <div key={textKey} style={{ display: 'flex', alignItems: 'center', gap: 10, flex: '1 1 150px', minWidth: 140 }}>
                 <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#F0F4FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Icon size={16} color="#2874F0" />
                 </div>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#1A1A2E' }}>{title}</div>
-                  <div style={{ fontSize: 11, color: '#878787' }}>{sub}</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: '#1A1A2E' }}>{t(textKey)}</div>
                 </div>
               </div>
             ))}
@@ -291,7 +297,7 @@ export default function Home() {
                 onClick={() => navigate(key === 'All' ? '/products' : `/products?cat=${encodeURIComponent(key)}`)}>
                 <img src={img} alt={name} className="iq-cat-img"
                   onError={e => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=200&q=80'; }} />
-                <div className="iq-cat-name">{name}</div>
+                <div className="iq-cat-name">{getCategoryLabel(currentLang, name)}</div>
               </button>
             ))}
           </div>

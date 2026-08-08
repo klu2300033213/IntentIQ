@@ -43,19 +43,10 @@ export const TRANSLATIONS = {
     total_amount: "Total Amount",
     place_order: "Place Order",
     continue_shopping: "Continue Shopping",
-    // Categories
-    cat_mobiles: "Mobiles",
-    cat_electronics: "Electronics",
-    cat_tv: "TV & Appliances",
-    cat_fashion: "Fashion",
-    cat_kitchen: "Home & Kitchen",
-    cat_beauty: "Beauty & Care",
-    cat_sports: "Sports",
-    cat_watches: "Watches",
-    cat_books: "Books",
-    cat_deals: "Top Deals",
-    cat_bestsellers: "Best Sellers",
-    cat_giftcards: "Gift Cards"
+    // Top bar promos
+    promo_freedom: "🇮🇳 Great Freedom Sale is Live!",
+    promo_top_brands: "Up to 80% Off on Top Brands",
+    promo_discount: "10% Instant Discount* on HDFC Cards"
   },
   HI: {
     search_placeholder: "उत्पाद, ब्रांड और अन्य खोजें...",
@@ -98,18 +89,9 @@ export const TRANSLATIONS = {
     total_amount: "कुल राशि",
     place_order: "ऑर्डर दें",
     continue_shopping: "खरीदारी जारी रखें",
-    cat_mobiles: "मोबाइल",
-    cat_electronics: "इलेक्ट्रॉनिक्स",
-    cat_tv: "टीवी और उपकरण",
-    cat_fashion: "फैशन",
-    cat_kitchen: "घर और रसोई",
-    cat_beauty: "सौंदर्य और देखभाल",
-    cat_sports: "खेल",
-    cat_watches: "घड़ियां",
-    cat_books: "पुस्तकें",
-    cat_deals: "शीर्ष ऑफ़र",
-    cat_bestsellers: "बेस्ट सेलर्स",
-    cat_giftcards: "गिफ्ट कार्ड"
+    promo_freedom: "🇮🇳 महान स्वतंत्रता सेल लाइव है!",
+    promo_top_brands: "शीर्ष ब्रांडों पर 80% तक की छूट",
+    promo_discount: "HDFC कार्ड्स पर 10% की तुरंत छूट*"
   },
   TA: {
     search_placeholder: "தயாரிப்புகள், பிராண்டுகள் தேடவும்...",
@@ -152,18 +134,9 @@ export const TRANSLATIONS = {
     total_amount: "மொத்த தொகை",
     place_order: "ஆர்டர் செய்",
     continue_shopping: "தொடர்ந்து வாங்குங்கள்",
-    cat_mobiles: "மொபைல்கள்",
-    cat_electronics: "எலக்ட்ரானிக்ஸ்",
-    cat_tv: "டிவி & சாதனங்கள்",
-    cat_fashion: "ஃபேஷன்",
-    cat_kitchen: "வீடு & சமையலறை",
-    cat_beauty: "அழகு & பராமரிப்பு",
-    cat_sports: "விளையாட்டு",
-    cat_watches: "கடிகாரங்கள்",
-    cat_books: "புத்தகங்கள்",
-    cat_deals: "சிறந்த சலுகைகள்",
-    cat_bestsellers: "பிரபலமானவை",
-    cat_giftcards: "கிஃப்ட் கார்டுகள்"
+    promo_freedom: "🇮🇳 பெரு சுதந்திர விற்பனை நேரலையில்!",
+    promo_top_brands: "சிறந்த பிராண்டுகளுக்கு 80% வரை தள்ளுபடி",
+    promo_discount: "HDFC கார்டுகளில் 10% உடனடி தள்ளுபடி*"
   },
   TE: {
     search_placeholder: "ఉత్పత్తులు, బ్రాండ్‌ల కోసం వెతకండి...",
@@ -206,18 +179,9 @@ export const TRANSLATIONS = {
     total_amount: "మొత్తం మొత్తం",
     place_order: "ఆర్డర్ చేయండి",
     continue_shopping: "షాపింగ్ కొనసాగించండి",
-    cat_mobiles: "మొబైల్స్",
-    cat_electronics: "ఎలక్ట్రానిక్స్",
-    cat_tv: "టీవీ మరియు గృహోపకరణాలు",
-    cat_fashion: "ఫ్యాషన్",
-    cat_kitchen: "ఇల్లు & వంటగది",
-    cat_beauty: "సౌందర్యం & సంరక్షణ",
-    cat_sports: "క్రీడలు",
-    cat_watches: "వాచీలు",
-    cat_books: "పుస్తకాలు",
-    cat_deals: "ఉత్తమ ఆఫర్‌లు",
-    cat_bestsellers: "బెస్ట్ సెలర్స్",
-    cat_giftcards: "గిఫ్ట్ కార్డ్‌లు"
+    promo_freedom: "🇮🇳 గ్రేట్ ఫ్రీడమ్ సేల్ ప్రారంభమైంది!",
+    promo_top_brands: "టాప్ బ్రాండ్‌లపై 80% వరకు తగ్గింపు",
+    promo_discount: "HDFC కార్డ్‌లపై 10% తక్షణ తగ్గింపు*"
   },
   KN: {
     search_placeholder: "ಉತ್ಪನ್ನಗಳು, ಬ್ರ್ಯಾಂಡ್‌ಗಳನ್ನು ಹುಡುಕಿ...",
@@ -260,18 +224,9 @@ export const TRANSLATIONS = {
     total_amount: "ಒಟ್ಟು ಮೊತ್ತ",
     place_order: "ಆರ್ಡರ್ ಮಾಡಿ",
     continue_shopping: "ಖರೀದಿ ಮುಂದುವರಿಸಿ",
-    cat_mobiles: "ಮೊಬೈಲ್‌ಗಳು",
-    cat_electronics: "ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್",
-    cat_tv: "ಟಿವಿ ಮತ್ತು ಉಪಕರಣಗಳು",
-    cat_fashion: "ಫ್ಯಾಷನ್",
-    cat_kitchen: "ಮನೆ & ಅಡುಗೆಮನೆ",
-    cat_beauty: "ಸೌಂದರ್ಯ & ಆರೈಕೆ",
-    cat_sports: "ಕ್ರೀಡೆ",
-    cat_watches: "ಗಡಿಯಾರಗಳು",
-    cat_books: "ಪುಸ್ತಕಗಳು",
-    cat_deals: "ಉನ್ನತ ಆಫರ್‌ಗಳು",
-    cat_bestsellers: "ಬೆಸ್ಟ್ ಸೆಲ್ಲರ್‌ಗಳು",
-    cat_giftcards: "ಗಿಫ್ಟ್ ಕಾರ್ಡ್‌ಗಳು"
+    promo_freedom: "🇮🇳 ಮಹಾನ್ ಸ್ವಾತಂತ್ರ್ಯ ಸೇಲ್ ಪ್ರಾರಂಭವಾಗಿದೆ!",
+    promo_top_brands: "ಉನ್ನತ ಬ್ರ್ಯಾಂಡ್‌ಗಳ ಮೇಲೆ 80% ವರೆಗೆ ರಿಯಾಯಿತಿ",
+    promo_discount: "HDFC ಕಾರ್ಡ್‌ಗಳಲ್ಲಿ 10% ತಕ್ಷಣದ ರಿಯಾಯಿತಿ*"
   },
   ML: {
     search_placeholder: "ഉൽപ്പന്നങ്ങൾ, ബ്രാൻഡുകൾ തിരയുക...",
@@ -314,18 +269,9 @@ export const TRANSLATIONS = {
     total_amount: "ആകെ തുക",
     place_order: "ഓർഡർ നൽകുക",
     continue_shopping: "ഷോപ്പിംഗ് തുടരുക",
-    cat_mobiles: "മൊബൈലുകൾ",
-    cat_electronics: "ഇലക്ട്രോണിക്സ്",
-    cat_tv: "ടിവി & ഉപകരണങ്ങൾ",
-    cat_fashion: "ഫാഷൻ",
-    cat_kitchen: "വീടും അടുക്കളയും",
-    cat_beauty: "സൗന്ദര്യ സംരക്ഷണം",
-    cat_sports: "കായികം",
-    cat_watches: "വാച്ചുകൾ",
-    cat_books: "പുസ്തകങ്ങൾ",
-    cat_deals: "മികച്ച ഓഫറുകൾ",
-    cat_bestsellers: "ബെസ്റ്റ് സെല്ലറുകൾ",
-    cat_giftcards: "ഗിഫ്റ്റ് കാർഡുകൾ"
+    promo_freedom: "🇮🇳 ഗ്രേറ്റ് ഫ്രീഡം സെയിൽ ലൈവാണ്!",
+    promo_top_brands: "മികച്ച ബ്രാൻഡുകളിൽ 80% വരെ കിഴിവ്",
+    promo_discount: "HDFC കാർഡുകളിൽ 10% തൽക്ഷണ ഡിസ്കൗണ്ട്*"
   },
   BN: {
     search_placeholder: "পণ্য, ব্র্যান্ড ইত্যাদি অনুসন্ধান করুন...",
@@ -344,7 +290,7 @@ export const TRANSLATIONS = {
     shop_now: "এখনই কিনুন →",
     explore_all: "সব দেখুন →",
     discover_title: "খুঁজুন। তুলনা করুন। বুদ্ধিমত্তার সাথে কিনুন।",
-    discover_sub: "সেরা ব্র্যান্ডগুলিতে বড় সঞ্চয় করুন",
+    discover_sub: "সেরা ব্র্যান্ডগুলোতে বড় সঞ্চয় করুন",
     shop_by_category: "ক্যাটাগরি অনুযায়ী কেনাকাটা করুন",
     top_deals_smartphones: "স্মার্টফোনে সেরা অফার",
     best_electronics: "সেরা ইলেকট্রনিক্স",
@@ -368,18 +314,9 @@ export const TRANSLATIONS = {
     total_amount: "মোট পরিমাণ",
     place_order: "অর্ডার করুন",
     continue_shopping: "কেনাকাটা চালিয়ে যান",
-    cat_mobiles: "মোবাইল",
-    cat_electronics: "ইলেকট্রনিক্স",
-    cat_tv: "টিভি ও যন্ত্রপাতি",
-    cat_fashion: "ফ্যাশন",
-    cat_kitchen: "হোম ও কিচেন",
-    cat_beauty: "সৌন্দর্য ও যত্ন",
-    cat_sports: "খেলাধুলা",
-    cat_watches: "ঘড়ি",
-    cat_books: "বই",
-    cat_deals: "সেরা অফার",
-    cat_bestsellers: "বেস্ট সেলার",
-    cat_giftcards: "গিফট কার্ড"
+    promo_freedom: "🇮🇳 গ্রেট ফ্রিডম সেল লাইভ!",
+    promo_top_brands: "সেরা ব্র্যান্ডগুলিতে ৮০% পর্যন্ত ছাড়",
+    promo_discount: "HDFC কার্ডে ১০% তাৎক্ষণিক ছাড়*"
   },
   MR: {
     search_placeholder: "उत्पादने, ब्रँड आणि बरेच काही शोधा...",
@@ -422,22 +359,42 @@ export const TRANSLATIONS = {
     total_amount: "एकूण रक्कम",
     place_order: "ऑर्डर द्या",
     continue_shopping: "खरेदी सुरू ठेवा",
-    cat_mobiles: "मोबाईल",
-    cat_electronics: "इलेक्ट्रॉनिक्स",
-    cat_tv: "टीव्ही आणि उपकरणे",
-    cat_fashion: "फॅशन",
-    cat_kitchen: "घर आणि स्वयंपाकघर",
-    cat_beauty: "सौंदर्य आणि काळजी",
-    cat_sports: "क्रीडा",
-    cat_watches: "घड्याळे",
-    cat_books: "पुस्तके",
-    cat_deals: "टॉप ऑफर्स",
-    cat_bestsellers: "बेस्ट सेलर्स",
-    cat_giftcards: "गिफ्ट कार्ड्स"
+    promo_freedom: "🇮🇳 ग्रेट फ्रीडम सेल लाईव्ह आहे!",
+    promo_top_brands: "टॉप ब्रँड्सवर 80% पर्यंत सूट",
+    promo_discount: "HDFC कार्ड्सवर 10% झटपट सूट*"
   }
+};
+
+export const CATEGORY_NAMES = {
+  Home: { EN: "Home", HI: "होम", TA: "முகப்பு", TE: "హోమ్", KN: "ಮುಖಪುಟ", ML: "ഹോം", BN: "হোম", MR: "होम" },
+  Mobiles: { EN: "Mobiles", HI: "मोबाइल", TA: "மொபைல்கள்", TE: "మొబైల్స్", KN: "ಮೊಬೈಲ್‌ಗಳು", ML: "മൊബൈലുകൾ", BN: "মোবাইল", MR: "मोबाईल" },
+  Smartphones: { EN: "Mobiles", HI: "मोबाइल", TA: "மொபைல்கள்", TE: "మొబైల్స్", KN: "ಮೊಬೈಲ್‌ಗಳು", ML: "മൊബൈലുകൾ", BN: "মোবাইল", MR: "मोबाईल" },
+  Electronics: { EN: "Electronics", HI: "इलेक्ट्रॉनिक्स", TA: "எலக்ட்ரானிக்ஸ்", TE: "ఎలక్ట్రానిక్స్", KN: "ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್", ML: "ഇലക്ട്രോണിക്സ്", BN: "ইলেকট্রনিক্স", MR: "इलेक्ट्रॉनिक्स" },
+  "TV & Appliances": { EN: "TV & Appliances", HI: "टीवी और उपकरण", TA: "டிவி & சாதனங்கள்", TE: "టీవీ & గృహోపకరణాలు", KN: "ಟಿವಿ ಮತ್ತು ಉಪಕರಣಗಳು", ML: "ടിവി & ഉപകരണങ്ങൾ", BN: "টিভি ও যন্ত্রপাতি", MR: "टीव्ही आणि उपकरणे" },
+  Appliances: { EN: "Appliances", HI: "उपकरण", TA: "சாதனங்கள்", TE: "గృహోపకరణాలు", KN: "ಉಪಕರಣಗಳು", ML: "ഉപകരണങ്ങൾ", BN: "যন্ত্রপাতি", MR: "उपकरणे" },
+  Fashion: { EN: "Fashion", HI: "फैशन", TA: "ஃபேஷன்", TE: "ఫ్యాషన్", KN: "ಫ್ಯಾಷನ್", ML: "ഫാഷൻ", BN: "ফ্যাশন", MR: "फॅशन" },
+  "Home & Kitchen": { EN: "Home & Kitchen", HI: "घर और रसोई", TA: "வீடு & சமையலறை", TE: "ఇల్లు & వంటగది", KN: "ಮನೆ & ಅಡುಗೆಮನೆ", ML: "വീടും അടുക്കളയും", BN: "হোম ও কিচেন", MR: "घर आणि स्वयंपाकघर" },
+  Kitchen: { EN: "Home & Kitchen", HI: "घर और रसोई", TA: "வீடு & சமையலறை", TE: "ఇల్లు & వంటగది", KN: "ಮನೆ & ಅಡುಗೆಮನೆ", ML: "വീടും അടുക്കളையும்", BN: "হোম ও কিচেন", MR: "घर आणि स्वयंपाकघर" },
+  Beauty: { EN: "Beauty", HI: "सौंदर्य", TA: "அழகு", TE: "సౌందర్యం", KN: "ಸೌಂದರ್ಯ", ML: "സൗന്ദര്യം", BN: "সৌন্দর্য", MR: "सौंदर्य" },
+  "Beauty & Care": { EN: "Beauty & Care", HI: "सौंदर्य और देखभाल", TA: "அழகு & பராமரிப்பு", TE: "సౌందర్యం & సంరక్షణ", KN: "ಸೌಂದರ್ಯ & ಆರೈಕೆ", ML: "സൗന്ദര്യ സംരക്ഷണം", BN: "সৌন্দর্য ও যত্ন", MR: "सौंदर्य आणि काळजी" },
+  Sports: { EN: "Sports", HI: "खेल", TA: "விளையாட்டு", TE: "క్రీడలు", KN: "ಕ್ರೀಡೆ", ML: "കായിക", BN: "খেলাধুলা", MR: "क्रीडा" },
+  Footwear: { EN: "Footwear", HI: "फुटवियर", TA: "காலணிகள்", TE: "కాళ్ళ చెప్పులు", KN: "ಪಾದರಕ್ಷೆಗಳು", ML: "ഫുട്‌വെയർ", BN: "ফুটওয়্যার", MR: "पादत्राणे" },
+  Watches: { EN: "Watches", HI: "घड़ियां", TA: "கடிகாரங்கள்", TE: "వాచీలు", KN: "ಗಡಿಯಾರಗಳು", ML: "വാച്ചുകൾ", BN: "ঘড়ি", MR: "घड्याळे" },
+  Accessories: { EN: "Accessories", HI: "एक्सेसरीज", TA: "அசெஸரீஸ்", TE: "యాక్సెసరీస్", KN: "ಪರಿಕರಗಳು", ML: "ആക്സസറികൾ", BN: "জিনিসপত্র", MR: "ॲक्सेसरीज" },
+  Books: { EN: "Books", HI: "पुस्तकें", TA: "புத்தகங்கள்", TE: "పుస్తకాలు", KN: "ಪುಸ್ತಕಗಳು", ML: "പുസ്തകങ്ങൾ", BN: "বই", MR: "पुस्तके" },
+  Deals: { EN: "Deals", HI: "ऑफ़र", TA: "சலுகைகள்", TE: "ఆఫర్‌లు", KN: "ಆಫರ್‌ಗಳು", ML: "ഓഫറുകൾ", BN: "অফার", MR: "ऑफर्स" },
+  "Top Deals": { EN: "Top Deals", HI: "शीर्ष ऑफ़र", TA: "சிறந்த சலுகைகள்", TE: "ఉత్తమ ఆఫర్‌లు", KN: "ಉನ್ನತ ಆಫರ್‌ಗಳು", ML: "മികച്ച ഓഫറുകൾ", BN: "সেরা অফার", MR: "टॉप ऑफर्स" },
+  "Best Sellers": { EN: "Best Sellers", HI: "बेस्ट सेलर्स", TA: "பிரபலமானவை", TE: "బెస్ట్ సెలర్స్", KN: "ಬೆಸ್ಟ್ ಸೆಲ್ಲರ್‌ಗಳು", ML: "ബെസ്റ്റ് സെല്ലറുകൾ", BN: "বেস্ট সেলার", MR: "बेस्ट सेलर्स" },
+  "Gift Cards": { EN: "Gift Cards", HI: "गिफ्ट कार्ड", TA: "கிஃப்ட் கார்டுகள்", TE: "గిఫ్ట్ కార్డ్‌లు", KN: "ಗಿಫ್ಟ್ ಕಾರ್ಡ್‌ಗಳು", ML: "ഗിഫ്റ്റ് കാർഡുകൾ", BN: "গিফট কার্ড", MR: "गिफ्ट कार्ड्स" }
 };
 
 export function getTranslation(langCode, key) {
   const dict = TRANSLATIONS[langCode] || TRANSLATIONS['EN'];
   return dict[key] || TRANSLATIONS['EN'][key] || key;
+}
+
+export function getCategoryLabel(langCode, categoryName) {
+  const map = CATEGORY_NAMES[categoryName];
+  if (!map) return categoryName;
+  return map[langCode] || map['EN'] || categoryName;
 }

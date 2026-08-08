@@ -134,7 +134,7 @@ export default function AIChatWidget() {
     meta: null,
   }]);
   const navigate = useNavigate();
-  const { addToCart } = useShop();
+  const { addToCart, t } = useShop();
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -366,7 +366,7 @@ Answer:`;
         onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
       >
         {open ? <X size={16} /> : <Sparkles size={16} />}
-        {open ? 'Close' : 'Ask AI Assistant'}
+        {open ? 'Close' : t('ask_ai')}
         {!open && <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#4CAF50' }} />}
       </button>
 
